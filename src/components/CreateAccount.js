@@ -37,7 +37,7 @@ export default function CreateAccount() {
           value={emailAddress}
           onChange={event => setEmailAddress(event.target.value)}
           name="Email Address"
-          type="text"
+          type="email"
         />
       </label>
       <br />
@@ -77,7 +77,7 @@ export default function CreateAccount() {
           value={password}
           onChange={event => setPassword(event.target.value)}
           name="Password"
-          type="text"
+          type="password"
         />
       </label>
       <br />
