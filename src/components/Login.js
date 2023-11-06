@@ -38,21 +38,22 @@ export default function Login() {
   
 
   return (
-    <div className={styles}>
+    <div className={styles.form}>
     <form onSubmit={loginHandler}>
-      <label>
-        Username:
+      <label htmlFor="username">Username </label>
         <input
+          id = "username"
+          className={styles.logininput}
           value={username}
           onChange={event => setUsername(event.target.value)}
           name="username"
           type="text"
         />
-      </label>
       <br />
       <label>
         Password: 
         <input
+          className={styles.logininput}
           value={password}
           onChange={event => setPassword(event.target.value)}
           name="password"
@@ -60,7 +61,7 @@ export default function Login() {
         />
       </label>
       <br />
-      <button>Submit</button> <br />
+      <button className={styles.loginbutton}>Login</button> <br />
       <Link to={`/RestorePassword`}> Restore Password</Link> <br />
       <Link to={`/CreateAccount`}> Create Account</Link>
     </form>
