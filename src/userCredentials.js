@@ -1,16 +1,16 @@
 const credentials = [
     {
-      userName: "driver1",
+      userName: "user1",
       password: "aaa",
 
     },
     {
-      userName: "driver2",
+      userName: "user2",
       password: "bbb",
 
     },
     {
-        userName: "driver3",
+        userName: "user3",
         password: "ccc",
   
       },
