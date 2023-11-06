@@ -1,18 +1,12 @@
-import React, { useEffect,useState } from "react";
-import {useParams,Link} from "react-router-dom";
-
+import React, { useState } from "react";
 import styles from "./Login.module.css";
 
-import { getAllCredentials } from "../driverCredentials";
+
+import { getAllCredentials } from "../../driverCredentials";
 import { useNavigate } from 'react-router-dom';
 
 
-
-
-export default function Settings() {
-  const driverUserName = useParams().driverUserName;
-  useEffect(() => {console.log(driverUserName)});
-
+export default function CreateAccount() {
   const [emailAddress, setEmailAddress] = useState('');
   const [fullName, setFullName] = useState('');
   const [city, setCity] = useState('');
@@ -27,7 +21,7 @@ export default function Settings() {
 
   const createAccountHandler = (e) => {
     e.preventDefault();
-    alert('You have successfully update your account information.');
+    alert('You have successfully created your account. Please login.');
     
   };
 
@@ -43,7 +37,7 @@ export default function Settings() {
           value={emailAddress}
           onChange={event => setEmailAddress(event.target.value)}
           name="Email Address"
-          type="text"
+          type="email"
         />
       </label>
       <br />
@@ -83,13 +77,11 @@ export default function Settings() {
           value={password}
           onChange={event => setPassword(event.target.value)}
           name="Password"
-          type="text"
+          type="password"
         />
       </label>
       <br />
-      <button>Save Changes</button> <br />
-      {/* <button>Delete Account</button> <br /> */}
-
+      <button>Create your account</button> <br />
 
     </form>
     </div>

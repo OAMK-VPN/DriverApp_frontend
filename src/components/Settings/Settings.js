@@ -1,12 +1,18 @@
-import React, { useState } from "react";
-import styles from "./Login.module.css";
+import React, { useEffect,useState } from "react";
+import {useParams,Link} from "react-router-dom";
 
 
-import { getAllCredentials } from "../driverCredentials";
+
+import { getAllCredentials } from "../../driverCredentials";
 import { useNavigate } from 'react-router-dom';
 
 
-export default function CreateAccount() {
+
+
+export default function Settings() {
+  const driverUserName = useParams().driverUserName;
+  useEffect(() => {console.log(driverUserName)});
+
   const [emailAddress, setEmailAddress] = useState('');
   const [fullName, setFullName] = useState('');
   const [city, setCity] = useState('');
@@ -21,7 +27,7 @@ export default function CreateAccount() {
 
   const createAccountHandler = (e) => {
     e.preventDefault();
-    alert('You have successfully created your account. Please login.');
+    alert('You have successfully update your account information.');
     
   };
 
@@ -29,7 +35,7 @@ export default function CreateAccount() {
   
 
   return (
-    <div className={styles}>
+    <div className>
     <form onSubmit={createAccountHandler}>
       <label>
       Email Address:
@@ -37,7 +43,7 @@ export default function CreateAccount() {
           value={emailAddress}
           onChange={event => setEmailAddress(event.target.value)}
           name="Email Address"
-          type="email"
+          type="text"
         />
       </label>
       <br />
@@ -77,11 +83,13 @@ export default function CreateAccount() {
           value={password}
           onChange={event => setPassword(event.target.value)}
           name="Password"
-          type="password"
+          type="text"
         />
       </label>
       <br />
-      <button>Create your account</button> <br />
+      <button>Save Changes</button> <br />
+      {/* <button>Delete Account</button> <br /> */}
+
 
     </form>
     </div>

@@ -1,10 +1,10 @@
 import React from "react";
-import Login from "./components/Login";
-import Settings from "./components/Settings";
-import CreateAccount from "./components/CreateAccount";
-import RestorePassword from "./components/RestorePassword";
-import ParcelsView from "./components/ParcelsView";
-import ParcelDetailsView from "./components/ParcelDetailsView";
+import Login from "./components/Login/Login";
+import Settings from "./components/Settings/Settings.js";
+import CreateAccount from "./components/SignUp/CreateAccount.js";
+import RestorePassword from "./components/RestorePassword/RestorePassword.js";
+import ParcelsView from "./components/ParcelsAllViews/ParcelsView.js";
+import ParcelDetailsView from "./components/ParcelsAllViews/ParcelDetailsView.js";
 
 import { Routes, Route, Link} from "react-router-dom";
 

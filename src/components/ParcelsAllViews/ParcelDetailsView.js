@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { getParcelById } from "../parcels";
+import { getParcelById } from "../../parcels";
 import {useParams,Link} from "react-router-dom";
 
 const ParcelDetailsView = () => {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Login.module.css";
 import { Link } from "react-router-dom";
 
-import { getAllCredentials } from "../driverCredentials";
+import { getAllCredentials } from "../../driverCredentials";
 import { useNavigate } from 'react-router-dom';
 
 

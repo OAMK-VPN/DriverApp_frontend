@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import styles from "./Login.module.css";
 import { Link } from "react-router-dom";
 
-import { getAllCredentials } from "../driverCredentials";
+import { getAllCredentials } from "../../driverCredentials";
 import { useNavigate } from 'react-router-dom';
 
 
@@ -39,7 +38,7 @@ export default function Login() {
   
 
   return (
-    <div className={styles}>
+    <div className>
     <h1>Restore Password</h1>
     <form onSubmit={getPassword}>
       <label>

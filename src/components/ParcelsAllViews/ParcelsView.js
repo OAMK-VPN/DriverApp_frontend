@@ -1,8 +1,8 @@
 import React, {useEffect} from "react";
 import {useParams,Link} from "react-router-dom";
 import styles from "./ParcelsView.module.css";
-import { getAllParcels } from "../parcels";
-import Parcel from "./Parcel";
+import { getAllParcels } from "../../parcels";
+import Parcel from "../Parcel";
 
 
 const ParcelsView = () => {
