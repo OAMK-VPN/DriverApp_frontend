@@ -1,13 +1,42 @@
-form {
+.form {
   
-    background-color:#16cf88;
-    height:800px;
-    width:800px;
-    text-align:center;
+    background-color:#ffffff;
+    height: 600px;
+    width: 20%;
     float:center;
     
     margin: auto;
     padding: 20px;
-    border: 3px solid #ccc;
-  
+    border: 1px solid #163760;
+    border-radius: 15px;
   }
+
+.form label {
+  display: block;
+}
+
+
+.logininput {
+  width: 50%;
+  height: 50%;
+  display: block;
+}
+
+.loginbutton {
+    background-color: #163760;
+    color: white; 
+    border: 0.5px solid transparent;
+    transition: border-color 0.3s; 
+    padding: 10px 20px; 
+    border-radius: 15px; 
+    cursor: pointer; 
+    width: 30%;
+    height: 10%;
+  
+}
+
+.loginbutton:hover {
+  background-color: #ffffff;
+  color: #163760;
+  border-color: #163760
+}
