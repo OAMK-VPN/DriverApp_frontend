@@ -19,6 +19,7 @@ const App = () => {
           
 
       <Routes>
+          <Route path="/" element={<Login />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/:driverUserName/ParcelsView" element={<ParcelsView />} />
           <Route path="/:driverUserName/Parcels/:parcelID"  element={<ParcelDetailsView />} />
