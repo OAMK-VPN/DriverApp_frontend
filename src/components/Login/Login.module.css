@@ -1,0 +1,102 @@
+.parent_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+}
+
+
+.form {
+    background-color:#ffffff;
+    height: 60vh;
+    width: 35vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+
+
+
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+
+
+
+    
+    
+  }
+
+
+
+.login_input {
+  width: 65%;
+  height: 5%;
+  margin-bottom: 5%;
+
+
+}
+
+
+.login_button {
+    background-color: #163760;
+    color: white; 
+    border: 0.5px solid transparent;
+    transition: border-color 0.5s; 
+    padding: 2.5%; 
+    margin: 3%;
+    border-radius: 15px; 
+    cursor: pointer; 
+    width: 50%;
+    height: auto;
+
+
+
+  
+}
+
+.login_button:hover {
+  background-color: #ffffff;
+  color: #163760;
+  border-color: #163760
+}
+
+
+@media (max-width: 800px) {
+  /* Adjust sizes for smaller screens */
+  .login_button {
+    width: 50%; /* Adjust the width for smaller screens */
+    height: auto; /* Set height to auto or adjust accordingly */
+    margin: 3%;
+    font-size: 10px;
+  }
+}
+
+
+.restore_password {
+  color: #163760;
+  text-decoration: none;
+  transition: text-decoration 0.5s;
+}
+
+.restore_password:hover {
+  text-decoration: underline;
+}
+
+
+.create_account{
+  color: #163760;
+  text-decoration: none;
+  transition: text-decoration 0.5s;
+}
+
+.create_account:hover {
+  text-decoration: underline;
+}
+
+
+.label {
+width: 67%;
+text-align: left;
+}

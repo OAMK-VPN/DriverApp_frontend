@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import styles from "./Login.module.css";
 import { Link } from "react-router-dom";
 
-import { getAllCredentials } from "../driverCredentials";
+import { getAllCredentials } from "../../driverCredentials";
 import { useNavigate } from 'react-router-dom';
+
+
+import keys from "../../assets/images/key-chain.png"
 
 
 export default function Login() {
@@ -13,7 +16,11 @@ export default function Login() {
   const credentials = getAllCredentials();
 
   const printCredentials = () => { console.log(credentials); };
-
+  
+  const UserInputHandler = (e) => {
+    const sanitaziedInput = e.target.value.replace(/[^A-Za-z0-9]/g, '');
+    setUsername(sanitaziedInput);
+  }
 
 
   const loginHandler = (e) => {
@@ -38,32 +45,39 @@ export default function Login() {
   
 
   return (
-    <div className={styles.form}>
-    <form onSubmit={loginHandler}>
-      <label htmlFor="username">Username </label>
+    <div className={styles.parent_form}>
+      <form className={styles.form} onSubmit={loginHandler}>
+      <img 
+      src = {keys}
+      style={{ width: '25%', height: 'auto', paddingTop: "25%", paddingBottom: "10%"}}
+      />
+        <label className={styles.label} htmlFor="username">Username</label>
         <input
+
+          className={styles.login_input}
           id = "username"
-          className={styles.logininput}
           value={username}
-          onChange={event => setUsername(event.target.value)}
+          onChange={UserInputHandler}
           name="username"
           type="text"
-        />
-      <br />
-      <label>
-        Password: 
+          />
+
+
+        <label className={styles.label} htmlFor="password">Password</label>
         <input
-          className={styles.logininput}
+          className={styles.login_input}
+          id = "password"
           value={password}
           onChange={event => setPassword(event.target.value)}
           name="password"
           type="password"
         />
-      </label>
-      <br />
-      <button className={styles.loginbutton}>Login</button> <br />
-      <Link to={`/RestorePassword`}> Restore Password</Link> <br />
-      <Link to={`/CreateAccount`}> Create Account</Link>
+
+      
+      <button className={styles.login_button}>Login</button> <br />
+      <Link to={`/RestorePassword`} className={styles.restore_password}> Restore Password</Link> <br />
+      <Link to={`/CreateAccount`} className={styles.create_account}> Create Account</Link>
+    
     </form>
     </div>
   );
