@@ -15,6 +15,13 @@ export default function Parcel({ parcelID, date, status, role }) {
 
   const displayDetails = () => {
     if (parcelDetails) {
+      const weight = parcelDetails.weigh;
+      const height = parcelDetails.height;
+      const width = parcelDetails.width;
+      const length = parcelDetails.length;
+      const locker = parcelDetails.cabinet.locker.name;
+      const locker_location = parcelDetails.cabinet.locker.address;
+      const code = parcelDetails.cabinet.code;
       return (
         <tr>
           <td>
@@ -22,22 +29,22 @@ export default function Parcel({ parcelID, date, status, role }) {
               <div
                 className={styles.window_alert_chdiv}>
                 <div className={styles.window_alert_parcelid}>
-                  <b>Tracking number:</b>
-                  <br />
                   <span>Note: after you drop off the parcel, please update the page to get the latest details</span>
+                  <br />
                 </div>
-
-
-                   <b>Size: </b> 
-                  {parcelDetails.weigh} kg |&nbsp;
-                  {parcelDetails.height * 100} x {parcelDetails.width * 100} x {parcelDetails.length * 100} 
-                  &nbsp; cm<br/>
+                  <b>Size: </b> 
+                  {weight} kg |&nbsp;
+                  {height * 100} x {width * 100} x {length * 100} 
+                  &nbsp; cm <br/>
                    <b>Status:</b> {parcelDetails.status.toLowerCase().replace(/_/g, ' ')} <br/>
-                   <b>Location: </b> {parcelDetails.cabinet.locker.address} <br/>
-                   <b>Locker: </b> {parcelDetails.cabinet.locker.name} <br/>
-                   <b>Code:</b> {parcelDetails.cabinet.code} <br/>
-                   <b>Cabinet number:</b> {parcelDetails.cabinet.number} <br/>
-
+                   <b>Location: </b> {locker_location} <br/>
+                   <b>Locker: </b> {locker} <br/>
+                   {code ? (
+                    <>
+                    <b>Code:</b> {code} <br/>
+                    </>
+                   ) : (null)}
+                
                 <button onClick = {() => setShow(false)}className={styles.alert_button}>close</button>
               </div>
             </div>

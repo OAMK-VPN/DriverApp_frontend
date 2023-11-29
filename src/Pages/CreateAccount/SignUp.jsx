@@ -10,8 +10,8 @@ import axios from "axios";
 
 
 
-const signup_point = 'http://localhost:8080/api/users/signup-driver';
 
+const signup_point = import.meta.env.VITE_APP_USERS_BASEURL + '/signup-driver';
 const SignUp = (props) => {
     const navigate = useNavigate();
     const notification_toast = (type, message, interval) =>
@@ -27,7 +27,7 @@ const SignUp = (props) => {
       email: '',
       name: '',
       city: '',
-      address: '',
+      driverCode: '',
       postalCode: '',
       password: '',
     })
@@ -44,7 +44,7 @@ const SignUp = (props) => {
 
     const submitHandler = async (e) => {
         e.preventDefault();
-        let usrnm = Math.random().toString(24).slice(2,12); // username gen
+        const usrnm = Math.random().toString(24).slice(2,12); // username gen
 
         try {
           const response = await axios.post(signup_point, 
@@ -54,13 +54,12 @@ const SignUp = (props) => {
             email: form.email,
             fullname: form.name,
             city: form.city,
-            address: form.address,
+            address: '',
             zipcode: form.postalCode,
             password: form.password,
-            driverCode: "123456789",
+            driverCode: form.driverCode,
             }, {
               headers: {
-
                 'Content-Type': 'application/json',
               }
             })
@@ -119,17 +118,6 @@ const SignUp = (props) => {
               required
             />
 
-
-            {/* Address */}
-            <InputField
-              label = "Address"
-              id = "address"
-              onChange={handleForm}
-              name="address"
-              type="text"
-              required
-            />
-
             {/* Postal code */}
             <InputField
               label = "Postal code"
@@ -150,6 +138,16 @@ const SignUp = (props) => {
               type="password"
               pattern="^(?=.*\d).{10,}$"
               title="password must contain at least 1 number"
+              required
+            />
+
+            {/* Driver Code */}
+            <InputField
+              label = "Driver code"
+              id = "driverCode"
+              onChange={handleForm}
+              name="driverCode"
+              type="text"
               required
             />
 

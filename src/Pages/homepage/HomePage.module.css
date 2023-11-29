@@ -56,15 +56,15 @@
 .mainText p:nth-child(3) { animation-delay: 1.5s; }
 
 
-.trackWord {
+.word1 {
   color: #163760;
 }
 
-.andWord {
+.word2 {
   color: #000000;
 }
 
-.traceWord {
+.word3 {
   color: #163760;
 }
 
