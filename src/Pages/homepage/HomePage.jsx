@@ -35,7 +35,7 @@ const HomePage = () => {
 
         <div className = {styles.parent_mainText}>
           <div className = {styles.mainText}>
-            <p><span className = {styles.word1}>Steeting dreams</span></p>
+            <p><span className = {styles.word1}>Steering dreams</span></p>
             <p><span className = {styles.word2}>Into</span></p>
             <p><span className = {styles.word3}>Reality</span></p>
           </div>
