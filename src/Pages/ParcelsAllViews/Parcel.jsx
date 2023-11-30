@@ -29,7 +29,7 @@ export default function Parcel({ parcelID, date, status, role }) {
               <div
                 className={styles.window_alert_chdiv}>
                 <div className={styles.window_alert_parcelid}>
-                  <span>Note: after you drop off the parcel, please update the page to get the latest details</span>
+                  <span><b>Note:</b> after you drop off the parcel, please update the page to get the latest details</span>
                   <br />
                 </div>
                   <b>Size: </b> 
