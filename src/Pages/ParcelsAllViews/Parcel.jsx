@@ -19,9 +19,9 @@ export default function Parcel({ parcelID, date, status, role }) {
       const height = parcelDetails.height;
       const width = parcelDetails.width;
       const length = parcelDetails.length;
-      const locker = parcelDetails.cabinet.locker.name;
-      const locker_location = parcelDetails.cabinet.locker.address;
-      const code = parcelDetails.cabinet.code;
+      const locker = parcelDetails.cabinet?.locker?.name ?? '';
+      const locker_location = parcelDetails.cabinet.locker?.address ?? '';
+      const code = parcelDetails.cabinet?.code ?? '';
       return (
         <tr>
           <td>
