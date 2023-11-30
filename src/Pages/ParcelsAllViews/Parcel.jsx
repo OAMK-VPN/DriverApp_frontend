@@ -15,12 +15,13 @@ export default function Parcel({ parcelID, date, status, role }) {
 
   const displayDetails = () => {
     if (parcelDetails) {
-      const weight = parcelDetails.weigh;
-      const height = parcelDetails.height;
-      const width = parcelDetails.width;
-      const length = parcelDetails.length;
+      const weight = parcelDetails.weigh ?? '';
+      const height = parcelDetails.height ?? '';
+      const width = parcelDetails.width ?? '';
+      const length = parcelDetails.length ?? '';
       const locker = parcelDetails.cabinet?.locker?.name ?? '';
       const locker_location = parcelDetails.cabinet.locker?.address ?? '';
+      const locker_zip = parcelDetails.cabinet.locker?.zipcode ?? '';
       const code = parcelDetails.cabinet?.code ?? '';
       return (
         <tr>
@@ -32,12 +33,14 @@ export default function Parcel({ parcelID, date, status, role }) {
                   <span><b>Note:</b> after you drop off the parcel, please update the page to get the latest details</span>
                   <br />
                 </div>
+                  
+                  
                   <b>Size: </b> 
-                  {weight} kg |&nbsp;
-                  {height * 100} x {width * 100} x {length * 100} 
-                  &nbsp; cm <br/>
+                  {Math.round(height * 100)} x {Math.round(width * 100)} x {Math.round(length * 100)} 
+                  &nbsp; cm |&nbsp; {Math.round(weight)} kg  <br/>
+                   
                    <b>Status:</b> {parcelDetails.status.toLowerCase().replace(/_/g, ' ')} <br/>
-                   <b>Location: </b> {locker_location} <br/>
+                   <b>Location: </b> {locker_location} | {locker_zip} <br/>
                    <b>Locker: </b> {locker} <br/>
                    {code ? (
                     <>
