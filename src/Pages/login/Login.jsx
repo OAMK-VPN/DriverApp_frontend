@@ -36,7 +36,6 @@ const Login = () => {
 
   const loginHandler = async (e) => {
     e.preventDefault();
-    console.log(loginForm);
     try {
       const response = await usersAPI.put(login_point, 
       { 
@@ -75,7 +74,6 @@ const Login = () => {
 
 
   const handleChange = debounce((e) => {
-    console.log(loginForm);
     setLoginForm({
       ...loginForm,
       [e.target.name]: e.target.value,

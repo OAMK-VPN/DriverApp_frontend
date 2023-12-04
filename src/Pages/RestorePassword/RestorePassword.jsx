@@ -31,12 +31,12 @@ export default function Login() {
     try {
       await usersAPI.put(`/forgotPassword/${enc_email}`)
     } catch (error) {
-      return;
      }
 
     notification_toast("success", "A new password has been sent to your email", 1000)
     setTimeout(() => {
-      navigate('/login')
+      toast.remove();
+      navigate('/login');
     }, 1500);
   }
 
@@ -66,6 +66,8 @@ export default function Login() {
 
       </div>
       <button className={styles.restore_button} type="submit">Restore</button> <br />
+      <Link to={`/login`} className={styles.bottom_link}>Login</Link>
+      <Link to={`/signup`} className={styles.bottom_link}>Create Account</Link>
     </form>
     <Toaster/>
     </div>
