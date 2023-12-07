@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { usersAPI } from "../../Instance";
 import { debounce } from "lodash";
 import toast, { Toaster } from 'react-hot-toast';
@@ -10,7 +10,7 @@ import styles from "./RestorePassword.module.css";
 
 
 
-export default function Login() {
+export default function RestorePassword() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const enc_email = encodeURIComponent(email);
