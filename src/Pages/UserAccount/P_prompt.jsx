@@ -62,7 +62,7 @@ const CustomPrompt = ({showPrompt, setshowPrompt}) => {
                         className={styles.prompt_input}
                         id="2"
                         onChange={handlepwdUpdate}
-                        name="current_pwd"
+                        name="new_pwd"
                         type="text"
                         pattern="^(?=.*\d).{10,}$"
                         title="password must contain at least 1 number"

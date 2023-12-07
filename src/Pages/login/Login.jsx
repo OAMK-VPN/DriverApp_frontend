@@ -12,6 +12,7 @@ import styles from "./Login.module.css";
 
 const login_point = '/signIn';
 const Login = () => {
+  const navigate = useNavigate();
   const notification_toast = (type, message, interval) =>
   toast[type](
     message, 
@@ -24,14 +25,6 @@ const Login = () => {
     email: '',
     password: '',
   })
-
-  
-  const navigate = useNavigate();
-  const resetForm = () => {
-    setEmail('');
-    setPassword('');
-  }
-
 
 
   const loginHandler = async (e) => {

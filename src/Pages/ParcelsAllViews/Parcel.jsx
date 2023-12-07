@@ -14,6 +14,21 @@ export default function Parcel({ parcelID, date, status, role }) {
   const parcel_details_point = `/parcel/${parcelID}/role/${role}`;
 
   const displayDetails = () => {
+    if (loading) {
+      return (
+        <tr>
+          <td>
+            <div className={styles.window_alert_div}>
+              <div className={styles.window_alert_chdiv}>
+                Loading...
+              </div>
+            </div>
+          </td>
+        </tr>
+      )
+    }
+
+
     if (parcelDetails) {
       const weight = parcelDetails.weigh ?? '';
       const height = parcelDetails.height ?? '';
@@ -27,8 +42,7 @@ export default function Parcel({ parcelID, date, status, role }) {
         <tr>
           <td>
             <div className={styles.window_alert_div}>
-              <div
-                className={styles.window_alert_chdiv}>
+              <div className={styles.window_alert_chdiv}>
                 <div className={styles.window_alert_parcelid}>
                   <span><b>Note:</b> after you drop off the parcel, please update the page to get the latest details</span>
                   <br />
@@ -44,7 +58,7 @@ export default function Parcel({ parcelID, date, status, role }) {
                    <b>Locker: </b> {locker} <br/>
                    {code ? (
                     <>
-                    <b>Code:</b> {code} <br/>
+                    <b>Code:</b> <u>{code}</u> <br/>
                     </>
                    ) : (null)}
                 
@@ -83,7 +97,7 @@ export default function Parcel({ parcelID, date, status, role }) {
           {status.toLowerCase().replace(/_/g, " ")}
         </td>
       </tr>
-      {show && !loading && displayDetails()}
+      {show && displayDetails()}
     </>
   );
 }
